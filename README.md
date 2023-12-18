@@ -24,11 +24,13 @@ git clone https://github.com/ASDSE/Liquid-Handling-Automation.git
 - Open ```OT_Template.xlsx``` and fill in the required information for your lab protocol. This includes the labware details, stock concentrations and target concentrations. 
 - Save the file for future reference and documentation.
 
-3. Open and run the Jupyter Notebook:
-```bash
-jupyter notebook automation_OT2.ipynb
-```
-Follow the instructions in the notebook to set up your wellplates.
+3. Launch the robot's Jupyter Notebook by either:
+   - Going to the **Advanced** tab of Robot Settings and clicking **Launch Jupyter Notebook**.
+   - Going directly to ```http://<robot-ip>:48888``` in your web browser (if you know your robot’s IP address).
+  
+4. Upload your protocol excel file and  ```automation_OT2.ipynb```.
+
+5. Follow the instructions in the notebook to set up your wellplates.
 
 ## Requirements
 - Opentrons OT-2 and Python Protocol API v2
