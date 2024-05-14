@@ -133,9 +133,10 @@ def run(protocol: protocol_api.ProtocolContext):
                 pip_name = right_pipette_name
                 
             if component_name == sheet_name:
-                if reservoir_name not in loaded_reservoirs:
-                    loaded_reservoirs[reservoir_name] = protocol.load_labware(reservoir_name, reservoir_slot)
-                reservoir = loaded_reservoirs[reservoir_name]
+                reservoir_key = (reservoir_name, reservoir_slot)
+                if reservoir_key not in loaded_reservoirs:
+                    loaded_reservoirs[reservoir_key] = protocol.load_labware(reservoir_name, reservoir_slot)
+                reservoir = loaded_reservoirs[reservoir_key]
                 
                 # delay time between component transfers
                 if delay_mins > 0:
